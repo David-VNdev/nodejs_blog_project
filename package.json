@@ -2,10 +2,12 @@
   "name": "blog",
   "version": "1.0.0",
   "description": "bog-f8-project",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --inspect index.js"
+    "start": "nodemon --inspect src/index.js",
+    "watch": "node-sass -w src/resources/scss/app.scss src/public/css/app.css",
+    "dev": "npm run start & npm run watch"
   },
   "repository": {
     "type": "git",
@@ -22,9 +24,13 @@
   },
   "homepage": "https://github.com/David-VNdev/nodejs_blog_project#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.3"
   },
   "devDependencies": {
+    "concurrently": "^6.2.1",
+    "morgan": "^1.10.0",
+    "node-sass": "^6.0.1",
     "nodemon": "^2.0.12"
   }
 }
