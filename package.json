@@ -4,6 +4,7 @@
   "description": "bog-f8-project",
   "main": "src/index.js",
   "scripts": {
+    "beautiful": "prettier --single-quote --trailing-comma all --write 'src/**/*.{js,json,scss}'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon --inspect src/index.js",
     "watch": "node-sass -w src/resources/scss/app.scss src/public/css/app.css",
@@ -25,12 +26,16 @@
   "homepage": "https://github.com/David-VNdev/nodejs_blog_project#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^5.3.3"
+    "express-handlebars": "^5.3.3",
+    "mongoose": "^6.0.8"
   },
   "devDependencies": {
     "concurrently": "^6.2.1",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
     "morgan": "^1.10.0",
     "node-sass": "^6.0.1",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "prettier": "^2.4.1"
   }
 }
