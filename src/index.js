@@ -3,9 +3,8 @@ const morgan = require("morgan");
 const handlebars = require("express-handlebars");
 const path = require("path");
 const app = express();
-const port = 3000;
 const db = require("./config/db");
-
+const port = 3000;
 //Connect to DB
 db.connect();
 
@@ -31,4 +30,22 @@ app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
 
-// mongod --dbpath=/Users/user/data/db
+// Command to start mongodb
+
+// To run MongoDB (i.e. the mongod process) as a macOS service, run:
+
+// brew services start mongodb-community@5.0
+
+// To stop a mongod running as a macOS service, use the following command as needed:
+
+// brew services stop mongodb-community@5.0
+
+// To run MongoDB (i.e. the mongod process) manually as a background process, run:
+
+// For macOS running Intel processors:
+
+// mongod --config /usr/local/etc/mongod.conf --fork
+
+// For macOS running on Apple M1 processors:
+
+// mongod --config /opt/homebrew/etc/mongod.conf --fork
