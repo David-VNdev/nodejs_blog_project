@@ -5,6 +5,7 @@ const path = require("path");
 const app = express();
 const db = require("./config/db");
 const port = 3000;
+const methodOvveride = require("method-override");
 //Connect to DB
 db.connect();
 
@@ -15,10 +16,13 @@ app.use(morgan("combined"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(methodOvveride("_method"));
 // Template engine
 
-app.engine("hbs", handlebars({ extname: ".hbs" }));
+app.engine(
+  "hbs",
+  handlebars({ extname: ".hbs", helpers: { sum: (a, b) => a + b } })
+);
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "resources", "views"));
 
