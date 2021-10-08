@@ -12,7 +12,7 @@ class SiteController {
 
     Course.find({})
       .then((courses) => {
-        res.render("home", { courses: multipleMongooseObject(courses) });
+        res.render("home", { courses: multipleMongooseObject(courses)});
       })
       .catch(next);
     // res.render("home");
